@@ -17,7 +17,7 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -59,7 +59,6 @@ class FirstPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Container(
-                  height: 280,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(

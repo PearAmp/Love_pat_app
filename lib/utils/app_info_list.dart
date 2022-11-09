@@ -35,30 +35,30 @@ List<Map<String, dynamic>> serviceList = [
 List<Map<String, dynamic>> doctorList = [
   {
     'imagedoctor': 'doctor1.png',
-    'expertise': 'สัตวแพทย์',
-    'name': 'อัมพร',
+    'expertise': 'สัตว์เล็ก',
+    'name': 'Drh. Jonh',
     'price': '25',
-    'distance': '2.7 Km'
+    'distance': '2.7'
   },
   {
     'imagedoctor': 'doctor2.png',
-    'expertise': 'ความสะอาด',
-    'name': 'อัมพร',
+    'expertise': 'สุนัข และแมว',
+    'name': 'Drh. Fredy',
     'price': '25',
-    'distance': '2.7 Km'
+    'distance': '2.7'
   },
   {
     'imagedoctor': 'doctor3.png',
-    'expertise': 'ยา',
-    'name': 'อัมพร',
+    'expertise': 'สัตว์ตระกูลเลื้อยคลาน',
+    'name': 'Drh. กัลยา',
     'price': '25',
-    'distance': '2.7 Km'
+    'distance': '2.7'
   },
   {
     'imagedoctor': 'doctor4.png',
-    'expertise': 'อาหาร',
-    'name': 'อัมพร',
+    'expertise': 'สัตว์ใหญ่',
+    'name': 'Drh. ณัฐพงษ์',
     'price': '25',
-    'distance': '2.7 Km'
+    'distance': '2.7'
   },
 ];
