@@ -16,17 +16,16 @@ class _BoxPriceState extends State<BoxPrice> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 115,
+      width: 100,
       // height: 60,
-      padding: EdgeInsets.symmetric(
-        vertical: 10,
-      ),
-      decoration: BoxDecoration(color: HexColor('#fbf5ff')),
+      padding: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+          color: HexColor('#fbf5ff'), borderRadius: BorderRadius.circular(5)),
       child: Column(
         children: [
           Text(
             widget.texttype,
-            style: TextStyle(fontFamily: 'kanit'),
+            style: TextStyle(fontFamily: 'kanit', color: HexColor('9d62c2')),
           ),
           Gap(5),
           Text(

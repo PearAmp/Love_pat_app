@@ -28,6 +28,8 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     FirstPage(),
     Text(
@@ -51,18 +53,27 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedLabelStyle: TextStyle(
+            fontFamily: 'Kanit',
+            fontWeight: FontWeight.w600,
+            fontSize: 10), //your text style
+        unselectedLabelStyle:
+            TextStyle(fontFamily: 'Kanit',
+            fontWeight: FontWeight.w600,
+
+             fontSize: 10), // your text style
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_filled),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Faverite',
+            label: 'like',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Setting',
+            label: 'setting',
           ),
         ],
         currentIndex: _selectedIndex,
