@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:hexcolor/hexcolor.dart';
-import 'package:love_pat/components/boxprice.dart';
-import 'package:love_pat/services/navigater.dart';
+import 'package:Love_pet/components/boxprice.dart';
+import 'package:Love_pet/components/map.dart';
+import 'package:Love_pet/services/navigater.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DocterDetail extends StatefulWidget {
   const DocterDetail({super.key});
@@ -16,9 +18,60 @@ class _DocterDetailState extends State<DocterDetail> {
   bool _isLikeButtonClicked = false;
   @override
   Widget build(BuildContext context) {
+    final Uri url = Uri.parse('https://www.google.co.th/maps/');
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: HexColor('debff2'),
+        shadowColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              onTap: () => sendToBack(context: context),
+              child: Container(
+                height: 32,
+                width: 36,
+                decoration: BoxDecoration(
+                  border: Border.all(color: HexColor('9d62c2')),
+                  color: HexColor('#e3d9ef'),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: HexColor('#9d62c2'),
+                  size: 18,
+                ),
+              ),
+            ),
+            Container(
+              height: 34,
+              width: 38,
+              decoration: BoxDecoration(
+                border: Border.all(color: HexColor('9d62c2')),
+                color: HexColor('#e3d9ef'),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: IconButton(
+                iconSize: 20,
+                icon: _isLikeButtonClicked
+                    ? Icon(Icons.favorite)
+                    : Icon(Icons.favorite_border_outlined),
+                color: _isLikeButtonClicked
+                    ? HexColor('9d62c2')
+                    : HexColor('9d62c2'),
+                onPressed: () {
+                  setState(() {
+                    _isLikeButtonClicked = !_isLikeButtonClicked;
+                  });
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+        padding: EdgeInsets.only(top: 5, bottom: 20, left: 20, right: 20),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/background.png"),
@@ -27,55 +80,6 @@ class _DocterDetailState extends State<DocterDetail> {
         ),
         child: ListView(
           children: [
-            SafeArea(
-                child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () => sendToBack(context: context),
-                    child: Container(
-                      height: 32,
-                      width: 36,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: HexColor('9d62c2')),
-                        color: HexColor('#e3d9ef'),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Icon(
-                        Icons.arrow_back_ios_new_rounded,
-                        color: HexColor('#9d62c2'),
-                        size: 18,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 34,
-                    width: 38,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: HexColor('9d62c2')),
-                      color: HexColor('#e3d9ef'),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: IconButton(
-                      iconSize: 20,
-                      icon: _isLikeButtonClicked
-                          ? Icon(Icons.favorite)
-                          : Icon(Icons.favorite_border_outlined),
-                      color: _isLikeButtonClicked
-                          ? HexColor('9d62c2')
-                          : HexColor('9d62c2'),
-                      onPressed: () {
-                        setState(() {
-                          _isLikeButtonClicked = !_isLikeButtonClicked;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            )),
-            Gap(20),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
               width: double.infinity,
@@ -110,6 +114,21 @@ class _DocterDetailState extends State<DocterDetail> {
                     style: TextStyle(
                         fontFamily: 'Kanit', fontSize: 12, color: Colors.grey),
                   ),
+                  Gap(10),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.phone,
+                        color: HexColor('#a533f4'),
+                        size: 20,
+                      ),
+                      Gap(10),
+                      Text(
+                        '089-568-4489',
+                        style: TextStyle(fontFamily: 'kanit'),
+                      )
+                    ],
+                  ),
                   Gap(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,6 +161,24 @@ class _DocterDetailState extends State<DocterDetail> {
                         fontWeight: FontWeight.w800),
                   ),
                   Gap(20),
+                  Container(
+                    child: MapWidget(),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        launchUrl(url);
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: HexColor('#a33eea')),
+                      child: Container(
+                        width: double.infinity,
+                        child: Align(
+                          child: Text(
+                            'Open To Map',
+                            style: TextStyle(fontFamily: 'kanit'),
+                          ),
+                        ),
+                      ))
                 ],
               ),
             )
@@ -151,6 +188,8 @@ class _DocterDetailState extends State<DocterDetail> {
     );
   }
 }
+
+
 // Image.asset(
 //   'assets/images/doctor3.png',
 //   height: 300,

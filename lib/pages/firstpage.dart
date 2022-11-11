@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:love_pat/components/Boxservice.dart';
-import 'package:love_pat/components/baner.dart';
-import 'package:love_pat/components/contentroute.dart';
-import 'package:love_pat/pages/doctor.dart';
-import 'package:love_pat/pages/profile.dart';
-import 'package:love_pat/pages/serviceall.dart';
+import 'package:Love_pet/components/Boxservice.dart';
+import 'package:Love_pet/components/baner.dart';
+import 'package:Love_pet/components/contentroute.dart';
+import 'package:Love_pet/pages/doctor.dart';
+import 'package:Love_pet/pages/profile.dart';
+import 'package:Love_pet/pages/serviceall.dart';
 
 import '../components/doctorbox.dart';
 import '../utils/app_info_list.dart';
@@ -17,19 +17,20 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        title: BannerApp(
+          title: 'Aoccy',
+          imageprofile: 'assets/images/profile.png',
+        ),
+      ),
       body: ListView(
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 20, left: 20, right: 20),
             child: Column(
               children: [
-                SafeArea(
-                  child: BannerApp(
-                    title: 'Aoccy',
-                    imageprofile: 'assets/images/profile.png',
-                  ),
-                ),
-                Gap(20),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset('assets/images/smartdog.png'),

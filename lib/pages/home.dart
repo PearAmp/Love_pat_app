@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:love_pat/pages/firstpage.dart';
+import 'package:Love_pet/pages/firstpage.dart';
 
 void main() => runApp(const HomePage());
 
@@ -57,11 +57,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             fontFamily: 'Kanit',
             fontWeight: FontWeight.w600,
             fontSize: 10), //your text style
-        unselectedLabelStyle:
-            TextStyle(fontFamily: 'Kanit',
+        unselectedLabelStyle: TextStyle(
+            fontFamily: 'Kanit',
             fontWeight: FontWeight.w600,
-
-             fontSize: 10), // your text style
+            fontSize: 10), // your text style
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),

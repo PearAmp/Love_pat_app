@@ -1,4 +1,4 @@
-name: love_pat
+name: Love_pet
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -39,6 +39,8 @@ dependencies:
   hexcolor: ^3.0.1
   gap: ^2.0.0
   google_maps_flutter: ^2.2.1
+  url_launcher: ^6.1.6
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:love_pat/pages/home.dart';
+import 'package:Love_pet/pages/home.dart';
 
 void main() {
   runApp(const MyApp());

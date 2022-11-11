@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:love_pat/pages/profile.dart';
+import 'package:Love_pet/pages/profile.dart';
 
 class BannerApp extends StatefulWidget {
   const BannerApp({Key? key, required this.title, required this.imageprofile})
@@ -21,7 +21,10 @@ class _BannerAppState extends State<BannerApp> {
         Text(
           widget.title,
           style: TextStyle(
-              fontFamily: 'Prompt', fontSize: 18, fontWeight: FontWeight.w800),
+              fontFamily: 'Prompt',
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+              color: Colors.black),
         ),
         InkWell(
           onTap: () {

@@ -1,9 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.love_pat">
+    package="com.example.Love_pet">
+<!-- Provide required visibility configuration for API level 30 and above -->
+
+
    <application
-        android:label="love_pat"
+        android:label="Love_pet"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBsgdLwfZccvRHTB5iB8LpXw2T072JTUwk"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

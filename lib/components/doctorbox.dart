@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:love_pat/pages/doctordetail.dart';
+import 'package:Love_pet/pages/doctordetail.dart';
 
 class DoctorBox extends StatelessWidget {
   final Map<String, dynamic> doctor;
